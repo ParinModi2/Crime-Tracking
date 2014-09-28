@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="lib" path="E:/Jar_files/httpclient-4.2.1.jar"/>
+	<classpathentry kind="lib" path="E:/Jar_files/httpcore-4.2.1.jar"/>
+	<classpathentry kind="lib" path="E:/Jar_files/httpmime-4.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/android-sdk_r12-windows/android-sdk_r12-windows/android-sdk-windows/extras/google/gcm/gcm-client/dist/gcm.jar"/>
+	<classpathentry kind="lib" path="C:/android-sdk_r12-windows/android-sdk_r12-windows/android-sdk-windows/extras/google/gcm/gcm-client/dist/gcm-src.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

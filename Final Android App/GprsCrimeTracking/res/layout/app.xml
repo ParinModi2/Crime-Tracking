@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff" >
+
+    <!-- Header  Starts -->
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="58dip"
+        android:background="@layout/top_repeat"
+        android:gravity="center|center_vertical|left"
+        android:padding="5dp" >
+
+        <!-- Logo Start -->
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/alert_icon" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/imageView2"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="WELCOME"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFFFF"
+                android:textSize="18dp" />
+        </RelativeLayout>
+
+        <!-- Logo Ends -->
+
+    </LinearLayout>
+    <!-- Header Ends -->
+    <!-- Footer Start -->
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@layout/footer_repeat" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|center_horizontal"
+            android:orientation="vertical" >
+
+              <ImageView
+                android:id="@+id/button6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/home_icon" />
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HOME" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|center_horizontal"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image_icon" 
+                android:clickable="true"/>
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IMAGES" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|center_horizontal"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/video_icon" 
+                android:clickable="true"/>
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VIDEO" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|center_horizontal"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/message_icon" 
+                android:clickable="true"/>
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MESSAGE" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|center_horizontal"
+            android:orientation="vertical" >
+            <ImageView android:src="@drawable/globe_icon" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/button4"></ImageView>
+            <TextView android:text="MAP" android:layout_height="wrap_content" android:id="@+id/textView1" android:layout_width="wrap_content"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Footer Ends -->
+
+
+    <!-- Login Form -->
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="75dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/header"
+        android:background="#353F4A"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@layout/porfile_bk" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <RelativeLayout android:layout_width="wrap_content"
+				android:layout_height="match_parent" android:layout_weight="0.33"
+				android:orientation="vertical" android:padding="3dp" android:weightSum="1">
+				<Button android:layout_height="wrap_content" android:background="@drawable/edit_btn" android:layout_width="50dp" android:id="@+id/button5" android:layout_below="@+id/textView5" android:layout_alignLeft="@+id/textView5"></Button>
+				<TextView android:id="@+id/textView5" android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:textColor="@android:color/white" 
+					android:text="Email ID: " android:layout_weight="0.73"/>
+				<TextView android:id="@+id/EmailId"  android:layout_height="wrap_content" android:layout_width="wrap_content" android:textColor="@android:color/white" android:layout_alignParentTop="true" android:layout_toRightOf="@+id/textView5"></TextView>
+				<TextView android:id="@+id/username" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textColor="@android:color/white" android:layout_below="@+id/textView5" android:layout_alignLeft="@+id/textView5"></TextView>
+				
+				
+			</RelativeLayout>
+			        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/footer"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout2"
+        android:orientation="vertical"
+        android:padding="10dip"
+        android:background="#353F4A" >
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+                
+                
+                
+                  <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Are you near any crime spot?Have you seen any crime happening in front of you?Well,Gprs Crime Tracking App is just one tap away to prompt the police officials about the crime on the spot. The user can notify the police officials about the crime happening on others as well as on him through the android smartphone. For the crime happening on others, the user can raise an alert either by sending the image , video or text to the police. For the crime happening on him, there is an option of ping button through which the current location of the user will be sent to the police. The registered police officials that will be in the range of 5 km from the crime location will get the alert in the form of push notification. The police can either accept the alert or reject the alert. On accepting the alert the police will get the driving directions from the current location of the police to the crime spot. The police can then send a feedback about the status of crime whether it was solved or unsolved."
+        android:typeface="serif"
+        android:textStyle="bold"
+        android:gravity="left"
+        />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

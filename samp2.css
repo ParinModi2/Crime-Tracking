@@ -1,0 +1,44 @@
+/* CSS Document */
+html,
+body {
+	margin:0;
+	padding:0;
+	
+}
+#footer
+{
+	background:url("crime_tracking_images/front_page/footer_bg.jpg") center;
+
+	height:90px;
+	width:100%;
+	position:fixed;
+	bottom:0;
+	padding:0;
+	margin:0;
+}
+#header
+{
+	height:80px;
+	background : url("crime_tracking_images/front_page/header_bg.jpg") center;
+	padding:0;
+	margin:0;
+}
+#wrapper {
+
+	position:relative;
+}
+#strip
+{
+	background:url("crime_tracking_images/front_page/strip.jpg") center;
+	padding-top:10px;
+}
+body
+{
+background-image:url("crime_tracking_images/front_page/body_bg.png");
+}
+
+
+#menu
+{
+	background-image:url("crime_tracking_images/front_page/normal_header.png") center;
+}

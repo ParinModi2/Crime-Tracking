@@ -1,0 +1,104 @@
+<!DOCTYPE html >
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>PHP/MySQL & Google Maps Example</title>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+
+    
+    function load() {
+      var map = new google.maps.Map(document.getElementById("map"), {
+        center: new google.maps.LatLng(21.195000, 72.819400),
+        zoom: 13,
+        mapTypeId: 'roadmap'
+      });
+      var infoWindow = new google.maps.InfoWindow;
+
+      // Change this depending on the name of your PHP file
+      downloadUrl("ping_on_map.php", function(data) {
+        var xml = data.responseXML;
+        var markers = xml.documentElement.getElementsByTagName("marker");
+
+        for (var i = 0; i < markers.length; i++) {
+		 var type = markers[i].getAttribute("type");
+  
+	if(type=='user')
+	   {
+	var cid= markers[i].getAttribute("case_id");
+          var email = markers[i].getAttribute("email");
+          var text = markers[i].getAttribute("text");
+          var img = markers[i].getAttribute("img");
+          var point = new google.maps.LatLng(
+              parseFloat(markers[i].getAttribute("lat")),
+              parseFloat(markers[i].getAttribute("lng")));
+          var html = "<b>Case id: </b>"+ cid+"<br><b>Details: </b>"+ email + "<b> Message: </b> <br/>" + text+"<br><img height=100 width=100 src="+"http://training.artoonsolutions.com/crimetracking/image/"+img+" alt='There is no image'></img>";
+
+		var marker = new google.maps.Marker({
+            map: map,
+           position: point,
+           icon:'police_copy.png',
+        	shadow: 'http://labs.google.com/ridefinder/images/mm_20_shadow.png'
+     
+          });
+	   }
+	else
+	{ 
+		 var email = markers[i].getAttribute("email");
+		 var point = new google.maps.LatLng(
+              parseFloat(markers[i].getAttribute("lat")),
+              parseFloat(markers[i].getAttribute("lng")));
+          var html = "<b>" + email + "</b> <br/>";
+
+		 var marker = new google.maps.Marker({
+            map: map,
+            position: point,
+            icon:'user_copy.png',
+          	 shadow: 'http://labs.google.com/ridefinder/images/mm_20_shadow.png'
+          });
+	}
+         bindInfoWindow(marker, map, infoWindow, html);
+        }
+      });
+    }
+
+    function bindInfoWindow(marker, map, infoWindow, html) {
+      google.maps.event.addListener(marker, 'click', function() {
+        infoWindow.setContent(html);
+        infoWindow.open(map, marker);
+      });
+    }
+
+    function downloadUrl(url, callback) {
+      var request = window.ActiveXObject ?
+          new ActiveXObject('Microsoft.XMLHTTP') :
+          new XMLHttpRequest;
+
+      request.onreadystatechange = function() {
+        if (request.readyState == 4) {
+          request.onreadystatechange = doNothing;
+          callback(request, request.status);
+        }
+      };
+
+      request.open('GET', url, true);
+      request.send(null);
+    }
+
+    function doNothing() {}
+
+    //]]>
+  self.setInterval ("load()", 45000);
+  </script>
+
+  </head>
+
+  <body onload="load()">
+<center>
+
+    <div id="map" style="width: 1000px; height: 500px" ></div>
+</center>  
+</body>
+
+</html>
